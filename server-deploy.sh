@@ -38,7 +38,7 @@ cd "$APP_DIR" || { log_err "Directory $APP_DIR not found"; exit 1; }
 
 log_info "Pull → Build → Restart (in $APP_DIR)"
 
-# 1. Git pull (if this is a git repo)
+# 1. Git pull (or one-time init so future runs will pull)
 if [ -d .git ]; then
     log_info "Pulling latest from $GIT_REPO ($GIT_BRANCH)..."
     git remote add origin "$GIT_REPO" 2>/dev/null || true
@@ -49,7 +49,18 @@ if [ -d .git ]; then
         git pull origin master --no-edit 2>/dev/null && log_ok "Pulled (master)" || log_warn "Git pull failed, using existing code"
     fi
 else
-    log_warn "No .git – skipping pull (run one-time setup to clone repo)"
+    log_info "No .git – initializing repo and fetching latest from $GIT_REPO ($GIT_BRANCH)..."
+    # Backup server-only files (not in repo)
+    [ -f .env ] && cp -a .env /tmp/precast-backend.env.bak
+    [ -f firebase-credentials.json ] && cp -a firebase-credentials.json /tmp/precast-backend-firebase.json.bak
+    git init
+    git remote add origin "$GIT_REPO"
+    git fetch origin
+    git checkout -B "$GIT_BRANCH" "origin/$GIT_BRANCH" 2>/dev/null || git checkout -B master origin/master 2>/dev/null || true
+    # Restore server-only files
+    [ -f /tmp/precast-backend.env.bak ] && mv /tmp/precast-backend.env.bak .env
+    [ -f /tmp/precast-backend-firebase.json.bak ] && mv /tmp/precast-backend-firebase.json.bak firebase-credentials.json
+    log_ok "Repo initialized; future runs will pull latest from git"
 fi
 
 # 2. Build
