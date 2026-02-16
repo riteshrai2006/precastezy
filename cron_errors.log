@@ -1,0 +1,15 @@
+CRON_ERROR: 2026/02/13 11:50:00 Starting daily maintenance cron job (11:50 AM IST)
+CRON_ERROR: 2026/02/13 11:50:00 🔔 Auto-generate Invoice for WorkOrder #26 (Pattern: {PatternType:date DateValue:13 WeekNumber: DayOfWeek: Stage:})
+CRON_ERROR: 2026/02/13 11:50:00 CleanupExpiredSessions completed successfully
+CRON_ERROR: 2026/02/13 11:50:00 CompleteActivityToStockyard failed: failed to fetch activities for project 978617912: pq: unexpected Parse response 'D'
+CRON_ERROR: 2026/02/13 11:50:00 ProjectSuspensionJob completed successfully
+CRON_ERROR: 2026/02/13 11:50:01 ErectedHandler completed successfully
+CRON_ERROR: 2026/02/13 11:50:01 Starting autoGenerateInvoiceFromCron for WO #26, period 2026-02-01T00:00:00+05:30 - 2026-02-13T11:50:01+05:30
+CRON_ERROR: 2026/02/13 11:50:03 ❌ Failed to auto-generate invoice for WO #26: temp stage fill (handover): pq: syntax error at or near "\"
+CRON_ERROR: 2026/02/13 11:50:03 🔔 Auto-generate Invoice for WorkOrder #27 (Pattern: {PatternType:date DateValue:13 WeekNumber: DayOfWeek: Stage:})
+CRON_ERROR: 2026/02/13 11:50:04 Starting autoGenerateInvoiceFromCron for WO #27, period 2026-02-01T00:00:00+05:30 - 2026-02-13T11:50:04+05:30
+CRON_ERROR: 2026/02/13 11:50:06 ❌ Failed to auto-generate invoice for WO #27: temp stage fill (handover): pq: syntax error at or near "\"
+CRON_ERROR: 2026/02/13 11:50:06 WorkOrderRecurrenceNotifications completed successfully
+CRON_ERROR: 2026/02/13 11:50:19 AutoCreateTasks completed successfully
+CRON_ERROR: 2026/02/13 11:50:19 All cron jobs finished
+CRON_ERROR: 2026/02/13 11:50:19 Daily cron cycle completed

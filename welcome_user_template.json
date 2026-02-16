@@ -1,0 +1,137 @@
+{
+  "templates": [
+    {
+      "name": "Default Welcome Admin Template",
+      "subject": "Welcome to {{project_name}} - Project Access Granted",
+      "body": "Dear {{client_name}},\n\nWelcome to {{project_name}}! Your project member account has been successfully created.\n\n**Account Details:**\n- **Email:** {{email}}\n- **Password:** {{password}}\n- **Role:** {{role}}\n\n**Project Access:**\nYou now have access to the project dashboard and can collaborate with your team members.\n\n**Security Reminder:**\nPlease change your password immediately after your first login.\n\n**Support:**\nFor technical support, contact {{support_email}}.\n\nBest regards,\n{{company_name}} Team",
+      "template_type": "welcome_admin",
+      "is_default": true,
+      "is_active": true,
+      "variables": [
+        {"key": "client_name", "description": "Project member full name"},
+        {"key": "project_name", "description": "Project name"},
+        {"key": "email", "description": "User email"},
+        {"key": "password", "description": "User password"},
+        {"key": "role", "description": "User role"},
+        {"key": "support_email", "description": "Support email"},
+        {"key": "company_name", "description": "Company name"}
+      ]
+    },
+    {
+      "name": "Professional Project Member Welcome",
+      "subject": "Welcome to {{project_name}} - Project Access Granted",
+      "body": "Dear {{client_name}},\n\nWelcome to {{project_name}}! Your project member account has been successfully created.\n\n**Account Details:**\n- **Email:** {{email}}\n- **Password:** {{password}}\n- **Role:** {{role}}\n- **Employee ID:** {{employee_id}}\n\n**Project Access:**\nYou now have access to the project dashboard and can collaborate with your team members.\n\n**Security Reminder:**\nPlease change your password immediately after your first login for security purposes.\n\n**Getting Started:**\n1. Visit {{login_url}}\n2. Login with your credentials\n3. Explore the project dashboard\n4. Update your profile information\n\n**Support:**\nIf you need any assistance, please contact {{support_email}}.\n\nBest regards,\n{{company_name}} Team",
+      "template_type": "welcome_user",
+      "is_default": false,
+      "is_active": true,
+      "variables": [
+        {"key": "client_name", "description": "Project member full name"},
+        {"key": "project_name", "description": "Project name"},
+        {"key": "email", "description": "User email"},
+        {"key": "password", "description": "User password"},
+        {"key": "role", "description": "User role in project"},
+        {"key": "employee_id", "description": "Employee ID"},
+        {"key": "login_url", "description": "Login URL"},
+        {"key": "support_email", "description": "Support email"},
+        {"key": "company_name", "description": "Company name"}
+      ]
+    },
+    {
+      "name": "Simple Project Member Welcome",
+      "subject": "Welcome to {{project_name}}",
+      "body": "Hello {{client_name}},\n\nWelcome to {{project_name}}! Your account has been created successfully.\n\n**Login Details:**\nEmail: {{email}}\nPassword: {{password}}\nRole: {{role}}\n\n**Login URL:** {{login_url}}\n\nPlease change your password after first login.\n\nBest regards,\n{{company_name}}",
+      "template_type": "welcome_admin",
+      "is_default": false,
+      "is_active": true,
+      "variables": [
+        {"key": "client_name", "description": "Project member full name"},
+        {"key": "project_name", "description": "Project name"},
+        {"key": "email", "description": "User email"},
+        {"key": "password", "description": "User password"},
+        {"key": "role", "description": "User role"},
+        {"key": "login_url", "description": "Login URL"},
+        {"key": "company_name", "description": "Company name"}
+      ]
+    },
+    {
+      "name": "Detailed Project Member Welcome",
+      "subject": "Welcome {{client_name}} - Your {{project_name}} Account is Ready!",
+      "body": "Dear {{client_name}},\n\n🎉 **Welcome to {{project_name}}!**\n\nYour project member account has been successfully created and you're now part of our team.\n\n## 📋 **Account Information**\n\n**Personal Details:**\n- **Full Name:** {{client_name}}\n- **Email Address:** {{email}}\n- **Temporary Password:** {{password}}\n- **Project Role:** {{role}}\n\n## 🔐 **Security First**\n\n⚠️ **Important:** Please change your password immediately after your first login to ensure account security.\n\n## 🚀 **Getting Started**\n\n1. **Access the Platform:** Visit {{login_url}}\n2. **Login:** Use your email and temporary password\n3. **Change Password:** Update your password in profile settings\n4. **Explore:** Navigate through the project dashboard\n5. **Connect:** Reach out to your team members\n\n## 📞 **Need Help?**\n\n- **Technical Support:** {{support_email}}\n- **Project Questions:** Contact your project manager\n- **Account Issues:** Reach out to the admin team\n\n## 📅 **Next Steps**\n\n- Complete your profile setup\n- Review project guidelines\n- Attend team orientation (if scheduled)\n- Start collaborating with your team\n\nWe're excited to have you on board!\n\nBest regards,\n{{company_name}} Team\n\n---\n*This is an automated message. Please do not reply to this email.*",
+      "template_type": "welcome_user",
+      "is_default": false,
+      "is_active": true,
+      "variables": [
+        {"key": "client_name", "description": "Project member full name"},
+        {"key": "project_name", "description": "Project name"},
+        {"key": "email", "description": "User email"},
+        {"key": "password", "description": "User password"},
+        {"key": "role", "description": "User role in project"},
+        {"key": "login_url", "description": "Login URL"},
+        {"key": "support_email", "description": "Support email"},
+        {"key": "company_name", "description": "Company name"}
+      ]
+    },
+    {
+      "name": "Casual Project Member Welcome",
+      "subject": "Hey {{client_name}}! Welcome to {{project_name}}",
+      "body": "Hi {{client_name}}! 👋\n\nGreat news! Your account for {{project_name}} has been set up and you're all ready to go.\n\n**Your Login Info:**\n📧 Email: {{email}}\n🔑 Password: {{password}}\n👤 Role: {{role}}\n\n**Quick Start:**\n1. Head over to {{login_url}}\n2. Log in with your details above\n3. Don't forget to change your password!\n\n**Need Help?**\nJust shoot us an email at {{support_email}} - we're here to help!\n\nWelcome aboard! 🚀\n\nCheers,\nThe {{company_name}} Team",
+      "template_type": "welcome_admin",
+      "is_default": false,
+      "is_active": true,
+      "variables": [
+        {"key": "client_name", "description": "Project member full name"},
+        {"key": "project_name", "description": "Project name"},
+        {"key": "email", "description": "User email"},
+        {"key": "password", "description": "User password"},
+        {"key": "role", "description": "User role"},
+        {"key": "login_url", "description": "Login URL"},
+        {"key": "support_email", "description": "Support email"},
+        {"key": "company_name", "description": "Company name"}
+      ]
+    },
+    {
+      "name": "Formal Project Member Welcome",
+      "subject": "Account Activation - {{project_name}} Project Access",
+      "body": "Dear {{client_name}},\n\nWe are pleased to inform you that your project member account for {{project_name}} has been successfully activated.\n\n**Account Credentials:**\n- **Username/Email:** {{email}}\n- **Temporary Password:** {{password}}\n- **Assigned Role:** {{role}}\n- **Project ID:** {{project_id}}\n\n**Access Information:**\nYou may now access the project management platform at: {{login_url}}\n\n**Security Protocol:**\nAs per our security policy, you are required to change your password upon your first login.\n\n**Technical Support:**\nFor any technical assistance, please contact our support team at {{support_email}}.\n\n**Project Guidelines:**\nPlease review the project documentation and guidelines available in your dashboard.\n\nWe look forward to your contribution to the project.\n\nSincerely,\n{{company_name}} Project Management Team",
+      "template_type": "welcome_user",
+      "is_default": false,
+      "is_active": true,
+      "variables": [
+        {"key": "client_name", "description": "Project member full name"},
+        {"key": "project_name", "description": "Project name"},
+        {"key": "email", "description": "User email"},
+        {"key": "password", "description": "User password"},
+        {"key": "role", "description": "User role"},
+        {"key": "project_id", "description": "Project ID"},
+        {"key": "login_url", "description": "Login URL"},
+        {"key": "support_email", "description": "Support email"},
+        {"key": "company_name", "description": "Company name"}
+      ]
+    }
+  ],
+  "usage_instructions": {
+    "description": "Welcome User Templates for Project Members",
+    "template_type": "welcome_user",
+    "default_template": "Default Welcome User Template",
+    "available_variables": [
+      "{{client_name}} - Project member's full name",
+      "{{email}} - Project member's email",
+      "{{password}} - Temporary password",
+      "{{role}} - Role in the project",
+      "{{project_name}} - Project name",
+      "{{project_id}} - Project ID",
+      "{{company_name}} - Company name",
+      "{{support_email}} - Support email",
+      "{{login_url}} - Login URL",
+      "{{user_name}} - User name (same as client_name)",
+      "{{employee_id}} - Employee ID (if applicable)"
+    ],
+    "how_to_use": [
+      "1. Choose a template from the list above",
+      "2. Copy the JSON for your chosen template",
+      "3. Send POST request to /api/email-templates",
+      "4. Use the returned template ID in project member creation",
+      "5. Or set is_default: true to make it the default template"
+    ]
+  }
+}
