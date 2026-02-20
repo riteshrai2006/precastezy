@@ -80,18 +80,36 @@ func (w *cssInjectorWriter) WriteHeader(statusCode int) {
 
 func CORSConfig() cors.Config {
 	corsConfig := cors.DefaultConfig()
-	// corsConfig.AllowOrigins = []string{"*"}
+	// Allow all origins for precastezy.blueinvent.com (main production domain)
 	corsConfig.AllowOrigins = []string{
 		"https://precastezy.blueinvent.com",
+		"https://precast.blueinvent.com",
 		"http://localhost:9000",
 		"http://localhost:8080",
+		"http://localhost:3000",
 	}
 	corsConfig.AllowCredentials = true
+	// Allow all common headers - comprehensive list for precastezy.blueinvent.com
 	corsConfig.AllowHeaders = []string{
 		"Content-Type", "Content-Length", "Accept-Encoding", "X-XSRF-TOKEN",
 		"Accept", "Origin", "X-Requested-With", "Authorization", "User-Agent",
+		"Cache-Control", "Referer", "X-Requested-With",
+		"Access-Control-Request-Method", "Access-Control-Request-Headers",
+		"X-Custom-Header", "X-API-Key", "X-Client-Version",
+		"Accept-Language", "Accept-Charset", "DNT", "Connection",
+		"Upgrade-Insecure-Requests", "Sec-Fetch-Dest", "Sec-Fetch-Mode",
+		"Sec-Fetch-Site", "Sec-Fetch-User",
 	}
-	corsConfig.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"}
+	// Allow all HTTP methods
+	corsConfig.AllowMethods = []string{
+		"GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH", "CONNECT", "TRACE",
+	}
+	// Expose all common response headers
+	corsConfig.ExposeHeaders = []string{
+		"Content-Length", "Authorization", "Content-Type", "X-Total-Count",
+		"X-Page-Count", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials",
+	}
+	corsConfig.MaxAge = 12 * time.Hour // Cache preflight requests for 12 hours
 	return corsConfig
 }
 
